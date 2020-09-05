@@ -6,28 +6,40 @@
 #include<QMessageBox>
 #include<QDebug>
 #include<QPushButton>
-
-
-
 lzq::lzq(QWidget *parent) : QMainWindow(parent)
 {
      setMinimumSize(500,500);
      memset(a, 0, 20 * 20 * sizeof(int));
      flag=0;
-
-
+     button.setParent(this);
+     button.setText("重新开始");
+     button.resize(3*width()/25,2*height()/25);
+     button.move(22*width()/25,3*height()/25);
+     button2.setParent(this);
+     button2.setText("悔棋");
+     button2.resize(3*width()/25,2*height()/25);
+     button2.move(22*width()/25,7*height()/25);
 }
 void lzq::paintEvent(QPaintEvent *)
 {
     QPainter p(this);
     p.setRenderHint(QPainter::Antialiasing, true);
 
-    w=width()/22;
-    h=height()/22;
+    w=width()/25;
+    h=height()/25;
     int i, j;
+
+    button.setParent(this);
+    button.setText("重新开始");
+    button.resize(3*w,2*h);
+    button.move(21*w,3*h);
+    connect(&button,&QPushButton::released,this,&lzq::myslot);
+    button2.setParent(this);
+    button2.setText("悔棋");
+    button2.resize(3*w,2*h);
+    button2.move(21*w,7*h);
+    connect(&button2,&QPushButton::released,this,&lzq::myslot2);
     p.drawPixmap(0,0,width(),height(),QPixmap("../a"));
-
-
     for (i = 0; i < 21; i++)
     {
         p.drawLine(w,h+i*h,w+20*w,h+i*h);
@@ -57,6 +69,7 @@ void lzq::paintEvent(QPaintEvent *)
     }
 }
 
+
 void lzq::mousePressEvent(QMouseEvent *e)
 {
     int x, y;
@@ -66,10 +79,12 @@ void lzq::mousePressEvent(QMouseEvent *e)
         y = (e->y() - h) / h;
         if (!a[x][y])
         {
-
-
-            a[x][y] = flag++ % 2 + 1;}
-
+          flag=flag-tem;
+          a[x][y] = flag++ % 2 + 1;
+          b=x;
+          c=y;
+          tem=0;
+          }
         if(f1(x,y)||f2(x,y)||f3(x,y)||f4(x,y))
         {
             if(a[x][y]==1){
@@ -152,6 +167,15 @@ bool lzq::f4(int x, int y)
 
     }
     return false;
+}
+void lzq::myslot(){
+     memset(a, 0, 20 * 20 * sizeof(int));
+     update();
+}
+void lzq::myslot2(){
+     a[b][c]=0;
+      tem =1;
+      update();
 }
 
 
