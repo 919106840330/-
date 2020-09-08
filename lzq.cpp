@@ -3,11 +3,15 @@
 #include<QPen>
 #include<QMouseEvent>
 #include<QBrush>
-#include<QMessageBox>
 #include<QDebug>
+#include<QMessageBox>
 #include<QPushButton>
+#include<QTimer>
 lzq::lzq(QWidget *parent) : QMainWindow(parent)
 {
+     resize(800,600);
+     time=new QTimer(this);
+     connect(time, SIGNAL(timeout()), this, SLOT(handleTimeout()));;
      setMinimumSize(500,500);
      memset(a, 0, 20 * 20 * sizeof(int));
      flag=0;
@@ -24,11 +28,9 @@ void lzq::paintEvent(QPaintEvent *)
 {
     QPainter p(this);
     p.setRenderHint(QPainter::Antialiasing, true);
-
     w=width()/25;
-    h=height()/25;
+    h=height()/22;
     int i, j;
-
     button.setParent(this);
     button.setText("重新开始");
     button.resize(3*w,2*h);
@@ -75,6 +77,7 @@ void lzq::mousePressEvent(QMouseEvent *e)
     int x, y;
     if(e->x() >= 0.9*w && e->x() < 22*w && e->y() >=h*0.9 && e->y() <22*h)
     {
+
         x = (e->x() - w) / w;
         y = (e->y() - h) / h;
         if (!a[x][y])
@@ -112,6 +115,9 @@ void lzq::mousePressEvent(QMouseEvent *e)
                      break;}
         }
     }
+        else{
+           time->start(20000);
+        }
     update();
 }}
 bool lzq::f1(int x, int y)
@@ -177,5 +183,21 @@ void lzq::myslot2(){
       tem =1;
       update();
 }
+void lzq::handleTimeout(){
+    if(flag%2==1){
+        QMessageBox::information(this,"超时","黑棋获胜");
+        memset(a, 0, 20 * 20 * sizeof(int));
+        time->stop();
+        update();
+    }
+    if(flag%2==2){
+        QMessageBox::information(this,"超时","白棋获胜");
+        memset(a, 0, 20 * 20 * sizeof(int));
+        time->stop();
+        update();
+    }
+}
+
+
 
 

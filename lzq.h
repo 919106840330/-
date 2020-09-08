@@ -5,7 +5,7 @@
 #include <QPaintEvent>
 #include <QPushButton>
 #include <QMouseEvent>
-
+#include <QTimer>
 
 class lzq : public QMainWindow
 {
@@ -23,6 +23,7 @@ private:
     int w;
     int h;
     int flag ;
+    int sj=0;
     bool f1(int, int);
     bool f2(int, int);
     bool f3(int, int);
@@ -32,8 +33,11 @@ private:
     int a[20][20];
     int b,c;
     int tem=0;
+    QTimer *time;
+    QTimer *t;
 
 public slots:
+    void handleTimeout();
 };
 
 #endif // LZQ_H
