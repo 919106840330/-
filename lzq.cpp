@@ -9,6 +9,7 @@
 #include<QTimer>
 lzq::lzq(QWidget *parent) : QMainWindow(parent)
 {
+     this->setWindowTitle("六子棋");
      resize(800,600);
      time=new QTimer(this);
      connect(time, SIGNAL(timeout()), this, SLOT(handleTimeout()));;
@@ -190,7 +191,7 @@ void lzq::handleTimeout(){
         time->stop();
         update();
     }
-    if(flag%2==2){
+    if(flag%2==0){
         QMessageBox::information(this,"超时","白棋获胜");
         memset(a, 0, 20 * 20 * sizeof(int));
         time->stop();

@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>429</width>
-    <height>392</height>
+    <width>590</width>
+    <height>627</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -15,7 +15,7 @@
   </property>
   <widget class="QWidget" name="centralWidget">
    <layout class="QGridLayout" name="gridLayout">
-    <item row="0" column="1">
+    <item row="0" column="5">
      <spacer name="verticalSpacer_2">
       <property name="orientation">
        <enum>Qt::Vertical</enum>
@@ -41,17 +41,17 @@
       </property>
      </spacer>
     </item>
-    <item row="1" column="1">
+    <item row="1" column="4">
      <widget class="QLabel" name="label">
       <property name="styleSheet">
        <string notr="true">font: 24pt &quot;Agency FB&quot;;</string>
       </property>
       <property name="text">
-       <string> 六子棋</string>
+       <string>           六子棋</string>
       </property>
      </widget>
     </item>
-    <item row="1" column="2">
+    <item row="1" column="6" colspan="2">
      <spacer name="horizontalSpacer_4">
       <property name="orientation">
        <enum>Qt::Horizontal</enum>
@@ -64,7 +64,7 @@
       </property>
      </spacer>
     </item>
-    <item row="2" column="1">
+    <item row="2" column="3">
      <spacer name="verticalSpacer_3">
       <property name="orientation">
        <enum>Qt::Vertical</enum>
@@ -90,14 +90,14 @@
       </property>
      </spacer>
     </item>
-    <item row="3" column="1">
+    <item row="3" column="4">
      <widget class="QPushButton" name="pushButton">
       <property name="text">
        <string>人人对战</string>
       </property>
      </widget>
     </item>
-    <item row="3" column="2">
+    <item row="3" column="6" colspan="2">
      <spacer name="horizontalSpacer_2">
       <property name="orientation">
        <enum>Qt::Horizontal</enum>
@@ -110,7 +110,7 @@
       </property>
      </spacer>
     </item>
-    <item row="4" column="1">
+    <item row="4" column="3">
      <spacer name="verticalSpacer">
       <property name="orientation">
        <enum>Qt::Vertical</enum>
@@ -123,6 +123,104 @@
       </property>
      </spacer>
     </item>
+    <item row="5" column="0">
+     <spacer name="horizontalSpacer_5">
+      <property name="orientation">
+       <enum>Qt::Horizontal</enum>
+      </property>
+      <property name="sizeHint" stdset="0">
+       <size>
+        <width>54</width>
+        <height>20</height>
+       </size>
+      </property>
+     </spacer>
+    </item>
+    <item row="5" column="1" colspan="6">
+     <widget class="QLabel" name="label_2">
+      <property name="styleSheet">
+       <string notr="true">font: 14pt &quot;Agency FB&quot;;</string>
+      </property>
+      <property name="text">
+       <string>黑白两方轮流下棋，先六点一线的一方获胜</string>
+      </property>
+     </widget>
+    </item>
+    <item row="5" column="7">
+     <spacer name="horizontalSpacer_8">
+      <property name="orientation">
+       <enum>Qt::Horizontal</enum>
+      </property>
+      <property name="sizeHint" stdset="0">
+       <size>
+        <width>57</width>
+        <height>20</height>
+       </size>
+      </property>
+     </spacer>
+    </item>
+    <item row="6" column="3">
+     <spacer name="verticalSpacer_5">
+      <property name="orientation">
+       <enum>Qt::Vertical</enum>
+      </property>
+      <property name="sizeHint" stdset="0">
+       <size>
+        <width>20</width>
+        <height>68</height>
+       </size>
+      </property>
+     </spacer>
+    </item>
+    <item row="7" column="0" colspan="2">
+     <spacer name="horizontalSpacer_6">
+      <property name="orientation">
+       <enum>Qt::Horizontal</enum>
+      </property>
+      <property name="sizeHint" stdset="0">
+       <size>
+        <width>73</width>
+        <height>20</height>
+       </size>
+      </property>
+     </spacer>
+    </item>
+    <item row="7" column="4">
+     <widget class="QLabel" name="label_3">
+      <property name="styleSheet">
+       <string notr="true">font: 14pt &quot;Agency FB&quot;;</string>
+      </property>
+      <property name="text">
+       <string>每个玩家只有20秒的时间下棋</string>
+      </property>
+     </widget>
+    </item>
+    <item row="7" column="6" colspan="2">
+     <spacer name="horizontalSpacer_7">
+      <property name="orientation">
+       <enum>Qt::Horizontal</enum>
+      </property>
+      <property name="sizeHint" stdset="0">
+       <size>
+        <width>76</width>
+        <height>20</height>
+       </size>
+      </property>
+     </spacer>
+    </item>
+    <item row="8" column="2">
+     <spacer name="verticalSpacer_4">
+      <property name="orientation">
+       <enum>Qt::Vertical</enum>
+      </property>
+      <property name="sizeHint" stdset="0">
+       <size>
+        <width>20</width>
+        <height>74</height>
+       </size>
+      </property>
+     </spacer>
+    </item>
    </layout>
   </widget>
   <widget class="QMenuBar" name="menuBar">
@@ -130,7 +228,7 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>429</width>
+     <width>590</width>
      <height>26</height>
     </rect>
    </property>

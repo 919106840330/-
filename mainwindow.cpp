@@ -23,4 +23,5 @@ void MainWindow::on_pushButton_clicked()
 void MainWindow::paintEvent(QPaintEvent *){
     QPainter p(this);
     p.drawPixmap(0,0,width(),height(),QPixmap("../xqxbjt"));
+    this->setWindowTitle("六子棋");
 }
